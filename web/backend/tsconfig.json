@@ -3,7 +3,7 @@
     "module": "commonjs",
     "esModuleInterop": true,
     "target": "es6",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "moduleResolution": "node",
     "sourceMap": false,
     "rootDir": ".",
@@ -11,6 +11,11 @@
     "noEmit": false,
     "resolveJsonModule": true,
     "noUnusedLocals": false,
-    "outDir": "./dist"
-  }
+    "outDir": "./dist",
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": ["node_modules", "tests", "playground"]
 }

@@ -17,13 +17,4 @@ export abstract class AggregateRoot {
   record (event: DomainEvent): void {
     this.domainEvents.push(event);
   }
-
-  toArray (): any[] {
-    return Object.keys(this).map(key => {
-      console.log(key);
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      return this[key];
-    });
-  }
 }

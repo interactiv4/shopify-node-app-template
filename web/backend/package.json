@@ -5,7 +5,8 @@
   "scripts": {
     "debug": "node --inspect-brk index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.ts",
-    "serve": "cross-env NODE_ENV=production node index.ts",
+    "compile": "tsc -p tsconfig.json",
+    "serve": "npm run compile && cross-env NODE_ENV=production node ./dist/index.js",
     "lint": "eslint . --ext .ts"
   },
   "engines": {
