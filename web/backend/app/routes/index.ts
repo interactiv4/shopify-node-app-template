@@ -4,7 +4,7 @@ import path from 'path';
 
 export function registerRoutes (router: Router): void {
   const srcDir = path.join(__dirname);
-  const routes = glob.sync(`${srcDir}/app/routes/**/*.route.*`);
+  const routes = glob.sync(`${srcDir}/**/*.route.*`);
   // eslint-disable-next-line array-callback-return
   routes.map(route => { register(route, router); });
 }
