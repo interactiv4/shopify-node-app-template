@@ -7,4 +7,4 @@ const container = new ContainerBuilder(true, srcDir);
 const loader = new YamlFileLoader(container);
 loader.load(`${process.cwd()}/app/dependency-injection/services.yml`);
 
-export default container
+export default container;
