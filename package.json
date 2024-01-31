@@ -10,7 +10,8 @@
     "info": "shopify app info",
     "generate": "shopify app generate",
     "deploy": "shopify app deploy",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "node ./web/backend/dist/src/main.js"
   },
   "dependencies": {
     "@shopify/app": "3.47.5",
