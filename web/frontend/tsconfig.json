@@ -14,7 +14,7 @@
     "sourceMap": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "outDir": "dist",
+    "outDir": "./dist",
     "baseUrl": ".",
     "noEmit": true,
     "paths": {
