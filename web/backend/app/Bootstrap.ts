@@ -5,27 +5,24 @@ import { registerRoutes } from './routes';
 import Router from 'express-promise-router';
 import shopify from '../lib/shopify';
 
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
-export class Bootstrap {
-  static async startServer (): Promise<void> {
-    const PORT = parseInt(process.env.BACKEND_PORT ?? '', 10);
-    const app = express();
-    const router = Router();
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    registerRoutes(router);
-    app.use(bodyParser.urlencoded({ extended: false }));
+const PORT = parseInt(process.env.BACKEND_PORT ?? '', 10);
+const app = express();
+const router = Router();
+// eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+registerRoutes(router);
+app.use(bodyParser.urlencoded({ extended: false }));
 
-    app.get(shopify.config.auth.path, shopify.auth.begin());
-    app.get(
-      shopify.config.auth.callbackPath,
-      shopify.auth.callback(),
-      shopify.redirectToShopifyOrAppRoot()
-    );
+app.get(shopify.config.auth.path, shopify.auth.begin());
+app.get(
+  shopify.config.auth.callbackPath,
+  shopify.auth.callback(),
+  shopify.redirectToShopifyOrAppRoot()
+);
 
-    app.use('/api/*', shopify.validateAuthenticatedSession());
-    app.use(express.json());
-    app.use(router);
+app.use('/api/*', shopify.validateAuthenticatedSession());
+app.use(express.json());
+app.use(router);
 
-    app.listen(PORT);
-  }
-}
+app.listen(PORT);
+
+export default app;

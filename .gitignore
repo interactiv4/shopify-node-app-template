@@ -28,3 +28,4 @@ web/database.sqlite
 
 # PHPStorm and IDE files
 .idea/
+.vercel

@@ -1,7 +1,7 @@
-import { Bootstrap } from './app/Bootstrap';
+import app from './app/Bootstrap';
 
 try {
-  void Bootstrap.startServer();
+  void app;
 } catch (error) {
   console.error(error);
   process.exit(1);
