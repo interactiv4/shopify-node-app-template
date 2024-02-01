@@ -9,6 +9,10 @@ export const register = (router: Router): void => {
       ? `${process.cwd()}/../frontend/dist`
       : `${process.cwd()}/../frontend/`;
 
+  console.log(process.env.NODE_ENV);
+  console.log(STATIC_PATH);
+  console.log(process.cwd());
+
   router.get('/*',
     shopify.ensureInstalledOnShop(),
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
