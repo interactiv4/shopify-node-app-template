@@ -3,7 +3,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "vite build",
+    "build": "npm install && vite build",
     "dev": "vite",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
