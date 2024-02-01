@@ -5,7 +5,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "shopify": "shopify",
-    "build": "npm install && cd web/backend && npm run build",
+    "build": "shopify app build",
     "dev": "shopify app dev",
     "info": "shopify app info",
     "generate": "shopify app generate",
