@@ -58,6 +58,7 @@ export default defineConfig({
       '^/(\\?.*)?$': proxyOptions,
       '^/api(/|(\\?.*)?$)': proxyOptions,
       '^/health-check': proxyOptions,
+      '^/assets/.*$': proxyOptions,
     },
   },
 })
