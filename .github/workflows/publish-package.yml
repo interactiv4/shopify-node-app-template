@@ -6,18 +6,21 @@ on:
 
 jobs:
   publish-npm:
-    name: 🚀 publish
+    name: '🚀 publish'
     runs-on: ubuntu-latest
     steps:
-      - name: 📚 checkout repository
-      - uses: actions/checkout@v4
-      - name: 🟢 node
-      - uses: actions/setup-node@v4
+      - name: '📚 checkout repository'
+        uses: actions/checkout@v4
+
+      - name: '🟢 setup node'
+        uses: actions/setup-node@v4
         with:
-          node-version-file: package.json
+          node-version-file: './package.json'
           registry-url: https://registry.npmjs.org/
-          cache: npm
-      - name: 🚀 publish
-      - run: npm publish --access public
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+          
+      - name: '🚀 publish to npmjs.org registry'
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_ACCESS_TOKEN}}
