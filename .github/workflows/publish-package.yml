@@ -9,13 +9,14 @@ jobs:
     name: 🚀 publish
     runs-on: ubuntu-latest
     steps:
-      - name: 📚 checkout
-      - uses: actions/checkout@v3
+      - name: 📚 checkout repository
+      - uses: actions/checkout@v4
       - name: 🟢 node
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version-file: package.json
           registry-url: https://registry.npmjs.org/
+          cache: npm
       - name: 🚀 publish
       - run: npm publish --access public
         env:
