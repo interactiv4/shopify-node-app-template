@@ -4,7 +4,7 @@ export class ProductsCounter {
   constructor (private readonly productRepository: ProductRepository) {
   }
 
-  count (): number {
-    return this.productRepository.count();
+  async count (): Promise<number> {
+    return await this.productRepository.count();
   }
 }

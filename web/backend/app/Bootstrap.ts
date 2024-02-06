@@ -19,9 +19,12 @@ app.get(
   shopify.redirectToShopifyOrAppRoot()
 );
 
-app.use('/assets', express.static(`${process.cwd()}/../frontend/dist/assets`));
+if (process.env.NODE_ENV === 'production') {
+  app.use('/assets', express.static(`${process.cwd()}/../frontend/dist/assets`));
+}
 
 app.use('/api/*', shopify.validateAuthenticatedSession());
+
 app.use(express.json());
 app.use(router);
 

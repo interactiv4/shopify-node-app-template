@@ -1,3 +1,3 @@
 export interface ProductRepository {
-  count: () => number
+  count: () => Promise<number>
 }

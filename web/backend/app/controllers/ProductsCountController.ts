@@ -6,6 +6,6 @@ export class ProductsCountController implements Controller {
   constructor (private readonly productsCounter: ProductsCounter) {}
 
   async execute (req: Request, res: Response): Promise<void> {
-    res.send({ count: this.productsCounter.count() });
+    res.send({ count: await this.productsCounter.count() });
   }
 }

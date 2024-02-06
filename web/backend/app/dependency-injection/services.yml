@@ -14,7 +14,7 @@ services:
   ##repository
   app.repository.products_count:
     class: ../../src/products/infrastructure/persistence/ShopifyProductRepository
-    arguments: [""]
+    arguments: ["@shopify.session_storage"]
 
   app.repository.session:
     class: ../../src/user/infrastructure/persistence/PrismaSessionRepository
